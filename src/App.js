@@ -1,27 +1,26 @@
 import './App.css';
 import Article from './components/article';
-import Body from './components/body';
+import Footer from './components/footer';
 import Header from './components/header';
+import Main from './components/main';
 import Nav from './components/nav';
 import Section from './components/section';
 
 function App() {
   return (
     <>
-    <Body>
-    <Header>
-      </Header>
-    <Nav></Nav>
+        <Header>
+        </Header>
+        <Nav />
         <Main>
           <Article>
-          <Section></Section>
+            <Section />
           </Article>
           <Article>
-            <Section></Section>
+            <Section />
           </Article>
         </Main>
-       <Footer></Footer>
-      </Body>
+        <Footer />
     </>
   );
 }

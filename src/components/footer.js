@@ -1,8 +1,8 @@
-import {footerImg} from "../assets/Logo.svg"
+import logo from "../assets/Logo.svg"
 function Footer(){
-    return <footer>
-        <img src={footerImg}/>
-    </footer>
+    return( <footer>
+        <img src={logo} alt="Little Lemon Logo"/>
+    </footer>)
 }
 
 export default Footer;
