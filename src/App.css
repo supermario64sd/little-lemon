@@ -7,12 +7,16 @@ h2,p{
 }
 
 h1{
-  color:#F4CE14
+  color:#F4CE14;
+  font-size:  4em;
 }
-nav li a, .hero h2{
+/*nav li a, .hero h2{
   color: #EDEFEE
 }
-
+*/
+.header{
+  background-color: black;
+}
 .card>p{
   color: #495E57
 }
@@ -32,4 +36,16 @@ footer{
 li a{
   list-style-type: none;
   text-decoration: none;
+}
+
+.hero{
+  background-color: #495E57;
+}
+
+.button{
+  background-color: #3333;
+}
+
+p{
+  font-size: 1em;
 }
