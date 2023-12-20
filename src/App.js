@@ -17,6 +17,8 @@ import { repeat } from 'fontawesome';
 import Hero from './components/hero';
 import Specials from './components/specials';
 import TestimonialSection from './components/testimonial_section';
+import BookingForm from './components/booking_page';
+import BookingPage from './components/booking_page';
 
 function App() {
   const links = [{
@@ -25,7 +27,11 @@ function App() {
   },
   {
     stringLiteral: "About",
-    route: "/about"
+    route: "/about",
+  },
+  {
+    stringLiteral: "Booking",
+    route: "/booking"
   }
   ];
 
@@ -36,14 +42,13 @@ function App() {
           <Header />
           <Nav links={links} />
         </HStack>
-          <Hero />
-          <Specials/>
-        <TestimonialSection/>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/booking" element={<BookingPage />}></Route>
+        </Routes>
       </ChakraProvider>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-      </Routes>
+
     </>
   );
 }
