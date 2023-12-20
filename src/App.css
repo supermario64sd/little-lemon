@@ -30,7 +30,7 @@ footer{
 }
 
 #testimonials{
-  background-color:#EDEFEE
+  background-color:#EDEFEE;
 }
 
 li a{
@@ -40,6 +40,7 @@ li a{
 
 .hero{
   background-color: #495E57;
+  margin-bottom: 10%;
 }
 
 .button{
@@ -49,3 +50,16 @@ li a{
 p{
   font-size: 1em;
 }
+
+#special-card-stack{
+  justify-content: center;
+}
+#special-section{
+  margin-left: "2%";
+  margin-right: "2%";
+}
+
+.special{
+  margin-bottom: 19%;
+}
+

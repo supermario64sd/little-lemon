@@ -16,6 +16,7 @@ import { Routes, Route } from "react-router-dom";
 import { repeat } from 'fontawesome';
 import Hero from './components/hero';
 import Specials from './components/specials';
+import TestimonialSection from './components/testimonial_section';
 
 function App() {
   const links = [{
@@ -36,11 +37,8 @@ function App() {
           <Nav links={links} />
         </HStack>
           <Hero />
-        <HStack>
           <Specials/>
-        </HStack>
-        <Box>
-        </Box>
+        <TestimonialSection/>
       </ChakraProvider>
       <Routes>
         <Route path="/" element={<Home />}></Route>

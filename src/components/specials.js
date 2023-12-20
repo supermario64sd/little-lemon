@@ -1,19 +1,19 @@
 import Section from "./section";
 import DishCard from "./dish_card";
-import { Button, HStack, Heading, SimpleGrid } from "@chakra-ui/react";
-import salad from "../assets/greek-salad.jpg";
+import { Button, HStack, Heading, SimpleGrid , Box} from "@chakra-ui/react";
+import salad from "../assets/greek-salad 2.jpg";
 import bruchetta from "../assets/bruchetta.svg";
 import dessert from "../assets/lemon dessert.jpg";
-const Specials= ()=>{
-    const specials =[
+const Specials = () => {
+    const specials = [
         {
             itemName: "Greek Salad",
             itemPrice: "$12.99",
-            itemDescription:`The famous greek salad of crispy lettuce, peppers, 
+            itemDescription: `The famous greek salad of crispy lettuce, peppers, 
             olives and our Chicago style feta cheese, 
             garnished with crunchy garlic and rosemary croutons. `,
-            imageSrc:salad,
-            alt:"a picture of salad"
+            imageSrc: salad,
+            alt: "a picture of salad"
         },
         {
             itemName: "Bruchetta",
@@ -34,7 +34,7 @@ const Specials= ()=>{
         }
     ]
 
-    const cards= specials.map(s=>{
+    const cards = specials.map(s => {
         return (
             <section>
                 <DishCard items={s} />
@@ -42,15 +42,19 @@ const Specials= ()=>{
         )
     })
     return (
-        <div id="testimonials">
-        <HStack position="relative" marginLeft="2%" marginRight="2%" marginBottom="9%">
-            <Heading as="h2">Specials</Heading>
-            <Button colorScheme="yellow" size="md" position="absolute" right="0%">Online Menu</Button>
-        </HStack>
-            <SimpleGrid spacing={3} templateColumns='repeat(auto-fit, minmax(375px, 1fr))' marginLeft="2%" marginRight="2%">
+        <div className="special">
+            <div  id="special-section" position="relative" >
+            <HStack marginLeft="2%" marginRight="2%" marginBottom="9%">
+                <Heading as="h2">Specials</Heading>
+                <Button colorScheme="yellow" size="md" position="absolute" right="2%">Online Menu</Button>
+            </HStack>
+            </div>
+            <HStack id="special-card-stack">
+            <SimpleGrid spacing={15} templateColumns='repeat(auto-fit, minmax(200px, 1fr))'>
                 {cards}
             </SimpleGrid>
-            </div>
+            </HStack>
+        </div>
     )
 }
 
