@@ -39,6 +39,8 @@ function App() {
         <HStack>
           <Specials/>
         </HStack>
+        <Box>
+        </Box>
       </ChakraProvider>
       <Routes>
         <Route path="/" element={<Home />}></Route>

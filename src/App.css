@@ -17,7 +17,7 @@ h1{
 .header{
   background-color: black;
 }
-.card>p{
+.card-text{
   color: #495E57
 }
 
