@@ -1,11 +1,12 @@
-import { Button, Container, FormControl, FormLabel,Input,Select, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Button, Card, CardBody, Container, FormControl, FormLabel,Input,Select, VStack } from "@chakra-ui/react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Form } from "react-router-dom";
 
 
 const BookingForm = () => {
+
     const formik = useFormik({
         initialValues: {
             date: null,
@@ -15,16 +16,17 @@ const BookingForm = () => {
         }
     })
     return (
-        <Container size="xs" backgroundColor="">
-            <VStack id="booking-form" spacing={8}>
-            <form onSubmit={formik.handleSubmit}>
+        <Container size="xs">
+        <Card colorScheme="green">
+            <CardBody >
+            <form onSubmit={formik.handleSubmit} id="booking-form">
             <FormControl>
                 <FormLabel>Choose Date</FormLabel>
-                <Input type="date" />
+                <Input type="date" id="date" name="date" onChange={formik.handleChange} value={formik.values.date}/>
             </FormControl>
             <FormControl>
                 <FormLabel>Choose Time</FormLabel>
-                <Select>
+                <Select id="time" name="time" onChange={formik.handleChange} value={formik.values.time}>
                     <option value="17:00">17:00</option>
                     <option value="18:00">18:00</option>
                     <option value="19:00">19:00</option>
@@ -37,11 +39,11 @@ const BookingForm = () => {
             <FormControl>
                 <FormLabel>Number of Guests</FormLabel>
                 <Input type="number" placeholder="1" min="1"
-                max="10" id="guests"/>
+                max="10" id="guests" name="guests" onChange={formik.handleChange} value={formik.values.guests}/>
             </FormControl>
             <FormControl>
             <FormLabel>Occasion</FormLabel>
-            <Select>
+            <Select id="occasion" name="occasion" onChange={formik.handleChange} value={formik.values.occasion}>
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </Select>
@@ -49,10 +51,12 @@ const BookingForm = () => {
             <FormControl>
             <Button type="submit">submit</Button>
             </FormControl>
-            
         </form>
-        </VStack>
+            </CardBody>
+            
+        </Card>
         </Container>
+        
         
         
     )

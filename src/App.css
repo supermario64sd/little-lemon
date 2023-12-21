@@ -63,12 +63,16 @@ p{
   margin-bottom: 19%;
 }
 
-#booking-form{
+/*#booking-form{
 background-color: #495E57;
 padding: 3%;
 width:90%;
 margin-left: 5%;
 border-radius: 16pt;
+}*/
+
+#booking-form{
+  margin-top: 6%;
 }
 
 #booking-form input, #booking-form select{
