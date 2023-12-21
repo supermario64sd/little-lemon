@@ -87,3 +87,6 @@ border-radius: 16pt;
   color:#F4CE14
 }
 
+.error, sup{
+  color:#cc0000
+}

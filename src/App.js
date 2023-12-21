@@ -1,26 +1,19 @@
 import './App.css';
-import Article from './components/article';
-import Footer from './components/footer';
 import Header from './components/header';
-import Main from './components/main';
 import Nav from './components/nav';
-import Reservation from './components/reservations';
-import Section from './components/section';
 import Home from './components/home';
 import About from './components/about';
-import Menu from './components/menu';
-import OrderOnline from './components/order_online';
-import LogIn from './components/log_in';
-import { ChakraProvider, VStack, HStack, Box, Grid, GridItem } from '@chakra-ui/react';
-import { Routes, Route } from "react-router-dom";
-import { repeat } from 'fontawesome';
-import Hero from './components/hero';
-import Specials from './components/specials';
-import TestimonialSection from './components/testimonial_section';
-import BookingForm from './components/booking_page';
-import BookingPage from './components/booking_page';
+import { ChakraProvider, HStack } from '@chakra-ui/react';
+import { Routes, Route, useNavigate } from "react-router-dom";
+import BookingPage from './components/booking/booking_page';
+import ConfirmedBooking from './components/booking/confirmation';
+import Footer from './components/footer';
+import { useState } from 'react';
 
 function App() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [bookingData, setBookingData] = useState(null);
+
   const links = [{
     stringLiteral: "Home",
     route: "/"
@@ -32,21 +25,32 @@ function App() {
   {
     stringLiteral: "Booking",
     route: "/booking"
+  },
+  {
+    stringLiteral: "Confirmation",
+    route:"/confirmation"
   }
   ];
 
   return (
     <>
       <ChakraProvider>
-        <HStack>
+        <HStack overflow={"scroll"}>
           <Header />
           <Nav links={links} />
         </HStack>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
-          <Route path="/booking" element={<BookingPage />}></Route>
+          <Route path="/booking" element={<BookingPage 
+          isSubmitted={isSubmitted} 
+          setIsSubmitted={setIsSubmitted} 
+          bookingData={bookingData}
+          setBookingData={setBookingData}/>}></Route>
+          <Route path="/confirmation" element ={<ConfirmedBooking isSubmitted={isSubmitted}
+          bookingData={bookingData}/>}></Route>
         </Routes>
+        <Footer links={links}/>
       </ChakraProvider>
 
     </>

@@ -1,7 +1,10 @@
 import { HStack, VStack, Box, Button, Heading } from "@chakra-ui/react";
 import hero from "../assets/restauranfood.jpg";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Hero(){
+    const navigation = useNavigate();
     return (
         <article>
             <div className="hero"  >
@@ -13,7 +16,8 @@ function Hero(){
                     <Heading as="h2"> Chicago </Heading>
                     <p>Some text some text some text some text some text some text some text some text some text some text</p>
                 </Box>
-            <Button colorScheme="yellow" marginTop="12%" size="md">Reserve a Table</Button>
+            <Button colorScheme="yellow" marginTop="12%" size="md" 
+            onClick={()=>navigation("/booking")}>Reserve a Table</Button>
             </VStack>
             <Box width ="50%" paddingTop="2%" paddingBottom="2%">
             <img src={hero} alt="Hero picture" max-width="100%"

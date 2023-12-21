@@ -50,7 +50,7 @@ const Specials = () => {
             </HStack>
             </div>
             <HStack id="special-card-stack">
-            <SimpleGrid spacing={15} templateColumns='repeat(auto-fit, minmax(200px, 1fr))'>
+            <SimpleGrid spacing={15} templateColumns='repeat(auto-fit, minmax(200px, 1fr))' overflow={"scroll"}>
                 {cards}
             </SimpleGrid>
             </HStack>
